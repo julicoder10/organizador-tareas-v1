@@ -1,0 +1,29 @@
+<section>
+    <div class="box-container">
+        <div class="box">
+            <label for="nombre">Inserte un nombre para la tarea:</label>
+            <input type="text" placeholder="Nombre de la tarea" [(ngModel)]="tarea.nombre" name="nombre">
+            <label for="texto">Inserte una pequeña info para su tarea:</label>
+            <input type="text" placeholder="Info" [(ngModel)]="tarea.texto" name="texto">
+            <label for="importancia">Seleccione el nivel de importancia para su tarea:</label>
+            <select name="select" [(ngModel)]="tarea.nivelImportancia" name="importancia">
+                <option value="Minimo">Minimo</option>
+                <option value="Medio" selected>Medio</option>
+                <option value="Alto">Alto</option>
+              </select>
+              <button (click)="agregarTarea()" class="btn" [disabled]="tarea.nombre == '' || tarea.texto == '' || tarea.nivelImportancia == 0  " >Agregar tarea</button>
+        </div>
+    </div>
+</section>
+
+<section id="section-tareas">
+    <div class="box-container">
+        <h5 *ngIf="listaTareas.length == 0">No hay tareas para realizar. Agrega tareas para comenzar</h5>
+        <div class="tarea" *ngFor="let tar of listaTareas; let i = index;" >
+            <i class="fa-solid fa-xmark" (click)="eliminarTarea(i)"></i>
+            <h3>Nombre: <span>{{tar.nombre}}</span></h3>
+            <p>Info: <span>{{tar.texto}}</span></p>
+            <h4>Importancia: <span>{{tar.nivelImportancia}}</span></h4>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+$dark-bg:#030d22;
+$lighter-pink:#e62373;
+$lighter-blue:#08bdd2;
+
+footer{
+    padding:2rem;
+    border-top:2px solid $lighter-pink;
+    display:flex;
+    justify-content:center;
+    
+    p{
+        font-size:1.5rem;
+        color:#fff;
+
+        span{
+            color:$lighter-blue;
+        }
+    }
+}

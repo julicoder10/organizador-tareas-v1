@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+$dark-bg:#030d22;
+$lighter-pink:#e62373;
+$lighter-blue:#08bdd2;
+
+
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration:none;
+    list-style:none;
+    font-family: 'Open Sans', sans-serif;
+    transition:.3s all ease-out;
+}
+
+.btn{
+    padding:1rem 2rem;
+    border:2px solid $lighter-pink;
+    border-radius:3rem;
+    color:$lighter-pink;
+    background:transparent;
+
+    &:hover{
+        background: $lighter-pink;
+        color:#fff;
+        cursor:pointer;
+    }
+}
+
+html{
+    font-size:62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color:$dark-bg
+}
